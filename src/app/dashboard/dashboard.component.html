@@ -1,0 +1,31 @@
+<!--<div class="">
+  <form [formGroup]="dashboardForm" novalidate>
+    <div class="dash-top-bar">
+      <div class="row dropdown">
+        <select class='form-control selcls' name="optionSelected" formControlName="selectedEntity"
+          (change)="onSelectedValue($event.target.value)">
+          <option value="">Please Select {{loginUserType}}</option>
+          <option class='option' *ngFor='let option of entityList' [value]="option.entityId">{{option.entityValue}}
+          </option>
+        </select>
+      </div>
+     
+      <div class="col-md-2 counter">
+        
+      </div>
+
+    </div>
+   
+  </form>
+
+</div>-->
+
+<eag-projects></eag-projects>
+
+<eag-grid [data]="data" [dataKey]="projectId" [gridId]="projects" [paginator]="true">
+    <eag-grid-column header="Project"  field="name" type="string" sortable="true"></eag-grid-column>
+    <eag-grid-column header="Revenue" field="revenue" type="number"></eag-grid-column>
+    <eag-grid-column header="Cost" field="cost" type="number"></eag-grid-column>
+    <eag-grid-column header="Start Date" field="startDate" type="date"></eag-grid-column>
+    <eag-grid-column header="Cost" field="cost" type="image" url="../../assets/images/edit.png" [itemClick]="editFunction"></eag-grid-column>
+  </eag-grid>
